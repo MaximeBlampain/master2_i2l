@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Calculatrice MBlampain</string>
+    <string name="copyright">Copyright Maxime Blampain 2021/2022</string>
+    <string name="enter_value">Entrez une valeur :</string>
+    <string name="calc_plus">Plus</string>
+    <string name="calc_moins">Moins</string>
+    <string name="calc_multi">Multiplié</string>
+    <string name="calc_divise">Divisé</string>
+    <string name="result">Résultat</string>
+    <string name="reset">RàZ</string>
+    <string name="equals">=</string>
+    <string name="exit">Quitter</string>
+</resources>
