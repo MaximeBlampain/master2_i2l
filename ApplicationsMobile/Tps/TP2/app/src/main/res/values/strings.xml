@@ -7,6 +7,9 @@
     <string name="calc_multi">Multiplié</string>
     <string name="calc_divise">Divisé</string>
     <string name="result">Résultat</string>
+    <string name="empty_field">Un des champs de la calculatrice est vide !</string>
+    <string name="no_operator_selected">Aucune opération sélectionnée</string>
+    <string name="unknown_operation">Opération Inconnue</string>
     <string name="reset">RàZ</string>
     <string name="equals">=</string>
     <string name="exit">Quitter</string>
