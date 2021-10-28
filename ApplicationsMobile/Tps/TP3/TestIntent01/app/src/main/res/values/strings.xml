@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestIntent01</string>
+    <string name="send">Envoyer</string>
+    <string name="nothing_received">Rien reçu</string>
+</resources>
