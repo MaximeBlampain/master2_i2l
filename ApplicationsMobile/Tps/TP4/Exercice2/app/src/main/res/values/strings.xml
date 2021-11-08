@@ -3,4 +3,6 @@
     <string name="upload">Charger</string>
     <string name="flip_hor">Flip Horizontal</string>
     <string name="flip_vert">Flip Vertical</string>
+    <string name="reverse_color">Inverser les couleurs</string>
+    <string name="grey_scale">Nuance de gris</string>
 </resources>

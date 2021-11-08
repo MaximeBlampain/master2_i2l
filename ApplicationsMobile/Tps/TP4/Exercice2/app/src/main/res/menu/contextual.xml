@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_reverse_color"
+        android:title="@string/reverse_color"
+        app:showAsAction="never" />
+    <item android:id="@+id/menu_grey_scale"
+        android:title="@string/grey_scale"/>
+</menu>
