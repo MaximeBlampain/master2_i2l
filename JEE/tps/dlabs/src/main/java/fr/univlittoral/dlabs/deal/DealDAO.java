@@ -18,4 +18,9 @@ public class DealDAO{
         return (ArrayList) query.getResultList();
     }
 
+    public DealDO findById(String idDeal) {
+        Query query = em.createQuery("from DealDO where id = :id");
+        query.setParameter("id", Integer.parseInt(idDeal));
+        return (DealDO) query.getSingleResult();
+    }
 }

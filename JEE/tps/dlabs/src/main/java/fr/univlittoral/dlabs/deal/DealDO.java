@@ -42,6 +42,9 @@ public class DealDO {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "promo_code")
+    private String promoCode;
+
     public Integer getId() {
         return id;
     }
@@ -128,5 +131,13 @@ public class DealDO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPromoCode() {
+        return promoCode;
+    }
+
+    public void setPromoCode(String promoCode) {
+        this.promoCode = promoCode;
     }
 }

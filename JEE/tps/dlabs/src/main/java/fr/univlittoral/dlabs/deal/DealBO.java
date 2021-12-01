@@ -37,5 +37,26 @@ public class DealBO {
         return dto;
     }
 
+    public DealDetailsDTO findById(String id){
+        DealDO deal = dealDAO.findById(id);
+        Double discount = (1-(deal.getNewPrice()/deal.getOldPrice()))*100;
+
+        DealDetailsDTO dto = new DealDetailsDTO();
+        dto.setId(deal.getId());
+        dto.setTitle(deal.getTitle());
+        dto.setShopName(deal.getShopName());
+        dto.setShopLink(deal.getShopLink());
+        dto.setTemperature(deal.getTemperature());
+        dto.setCreator(deal.getCreator());
+        dto.setOldPrice(deal.getOldPrice());
+        dto.setNewPrice(deal.getNewPrice());
+        dto.setDiscount(discount);
+        dto.setDate(deal.getDate());
+        dto.setImageUrl(deal.getImageUrl());
+        dto.setDescription(deal.getDescription());
+        dto.setPromoCode(deal.getPromoCode());
+        return dto;
+    }
+
 
 }

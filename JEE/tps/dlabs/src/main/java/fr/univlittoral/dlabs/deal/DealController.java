@@ -1,15 +1,14 @@
 package fr.univlittoral.dlabs.deal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/deal")
-public class DealRestService {
+public class DealController {
     @Autowired
     DealBO dealBO;
 
@@ -21,6 +20,8 @@ public class DealRestService {
         return dealBO.findAll();
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public DealDO
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
+    public DealDetailsDTO getById(@PathVariable("id") String id){
+        return dealBO.findById(id);
+    }
 }

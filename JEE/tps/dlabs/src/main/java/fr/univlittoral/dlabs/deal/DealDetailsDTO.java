@@ -16,6 +16,7 @@ public class DealDetailsDTO {
     private Calendar date;
     private String imageUrl;
     private String description;
+    private String promoCode;
 
     public Integer getId() {
         return id;
@@ -111,5 +112,13 @@ public class DealDetailsDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPromoCode() {
+        return promoCode;
+    }
+
+    public void setPromoCode(String promoCode) {
+        this.promoCode = promoCode;
     }
 }
