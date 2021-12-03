@@ -1,5 +1,7 @@
 import moment from 'moment'
 
+import noContent from "../../../assets/no-content.png"
+
 import {
   Container,
   Image,
@@ -24,7 +26,7 @@ export default function Card({
 
   return (
     <Container onClick={() => {redirect(`/details/${id}`)}}>
-      <Image src={imageUrl} />
+      <Image src={noContent} />
       <InformationsContainer>
         <h1 id={temperature < 0 ? "cold" : "hot"}>{ temperature }°</h1>
         <h3>{ title }</h3>

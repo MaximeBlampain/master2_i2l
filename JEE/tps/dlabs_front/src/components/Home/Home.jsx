@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Children, useEffect, useState } from 'react'
 import axios from "axios"
 
 import Card from './components/card'
@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <Container>
       {deals 
-        ? deals.map(deal => <Card {...deal}/>)
+        ? Children.toArray(deals.map(deal => <Card {...deal}/>))
         : <h2>No deals to show</h2>
       }
     </Container>

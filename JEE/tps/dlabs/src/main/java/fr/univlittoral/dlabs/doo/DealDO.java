@@ -1,22 +1,49 @@
-package fr.univlittoral.dlabs.deal;
+package fr.univlittoral.dlabs.doo;
 
+
+import javax.persistence.*;
 import java.util.Calendar;
 
-public class DealDetailsDTO {
-
+@Entity
+@Table(name = "tbl_deal")
+public class DealDO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "shop_name")
     private String shopName;
+
+    @Column(name = "shop_link")
     private String shopLink;
+
+    @Column(name = "price_old")
     private Double oldPrice;
+
+    @Column(name = "price_new")
     private Double newPrice;
-    private Double discount;
-    private Integer temperature;
+
+    @Column(name = "creator")
     private String creator;
+
+    @Column(name = "date")
     private Calendar date;
+
+    @Column(name = "img_url")
     private String imageUrl;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "promo_code")
     private String promoCode;
+
+    @Column(name = "fk_creator")
+    private Integer fkCreator;
 
     public Integer getId() {
         return id;
@@ -66,22 +93,6 @@ public class DealDetailsDTO {
         this.newPrice = newPrice;
     }
 
-    public Double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Double discount) {
-        this.discount = discount;
-    }
-
-    public Integer getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(Integer temperature) {
-        this.temperature = temperature;
-    }
-
     public String getCreator() {
         return creator;
     }
@@ -121,4 +132,6 @@ public class DealDetailsDTO {
     public void setPromoCode(String promoCode) {
         this.promoCode = promoCode;
     }
+
+
 }

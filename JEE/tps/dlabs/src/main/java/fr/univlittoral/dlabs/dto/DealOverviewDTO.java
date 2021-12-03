@@ -1,49 +1,17 @@
-package fr.univlittoral.dlabs.deal;
+package fr.univlittoral.dlabs.dto;
 
-
-import javax.persistence.*;
 import java.util.Calendar;
 
-@Entity
-@Table(name = "tbl_deal")
-public class DealDO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+public class DealOverviewDTO {
+
     private Integer id;
-
-    @Column(name = "title")
     private String title;
-
-    @Column(name = "shop_name")
     private String shopName;
-
-    @Column(name = "shop_link")
     private String shopLink;
-
-    @Column(name = "price_old")
-    private Double oldPrice;
-
-    @Column(name = "price_new")
-    private Double newPrice;
-
-    @Column(name = "temperature")
     private Integer temperature;
-
-    @Column(name = "creator")
     private String creator;
-
-    @Column(name = "date")
     private Calendar date;
-
-    @Column(name = "img_url")
     private String imageUrl;
-
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "promo_code")
-    private String promoCode;
 
     public Integer getId() {
         return id;
@@ -77,22 +45,6 @@ public class DealDO {
         this.shopLink = shopLink;
     }
 
-    public Double getOldPrice() {
-        return oldPrice;
-    }
-
-    public void setOldPrice(Double oldPrice) {
-        this.oldPrice = oldPrice;
-    }
-
-    public Double getNewPrice() {
-        return newPrice;
-    }
-
-    public void setNewPrice(Double newPrice) {
-        this.newPrice = newPrice;
-    }
-
     public Integer getTemperature() {
         return temperature;
     }
@@ -123,21 +75,5 @@ public class DealDO {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getPromoCode() {
-        return promoCode;
-    }
-
-    public void setPromoCode(String promoCode) {
-        this.promoCode = promoCode;
     }
 }

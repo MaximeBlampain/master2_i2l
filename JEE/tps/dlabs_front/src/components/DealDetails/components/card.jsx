@@ -1,5 +1,7 @@
 import moment from 'moment'
 
+import noContent from "../../../assets/no-content.png"
+
 import {
   Container,
   Image,
@@ -17,9 +19,10 @@ export default function Card({
   temperature,
   title,
 }) {
+  console.log("imageUrl", imageUrl)
   return (
     <Container>
-      <Image src={imageUrl} />
+      <Image src={noContent} />
       <InformationsContainer>
         <h1 id={temperature < 0 ? "cold" : "hot"}>{ temperature }°</h1>
         <h3>{ title }</h3>

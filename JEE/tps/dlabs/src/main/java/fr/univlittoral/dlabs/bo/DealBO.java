@@ -1,18 +1,24 @@
-package fr.univlittoral.dlabs.deal;
+package fr.univlittoral.dlabs.bo;
 
+import fr.univlittoral.dlabs.dao.DealDAO;
+import fr.univlittoral.dlabs.doo.DealDO;
+import fr.univlittoral.dlabs.dto.DealDetailsDTO;
+import fr.univlittoral.dlabs.dto.DealOverviewDTO;
+import fr.univlittoral.dlabs.repository.IDealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DealBO {
     @Autowired
-    private DealDAO dealDAO;
+    private IDealRepository dealRepository;
 
     public List<DealOverviewDTO> findAll() {
-        List<DealDO> deals = dealDAO.findAll();
+        List<DealDO> deals = dealRepository.findAll();
 
         List<DealOverviewDTO> formattedDeals = new ArrayList<>(deals.size());
         for( DealDO deal : deals){
@@ -37,8 +43,11 @@ public class DealBO {
         return dto;
     }
 
-    public DealDetailsDTO findById(String id){
-        DealDO deal = dealDAO.findById(id);
+    public DealDetailsDTO findById(Integer id){
+        Optional<DealDO> resp = dealRepository.findById(id);
+        if(resp.isEmpty()) return null;
+
+        DealDO deal = resp.get();
         Double discount = (1-(deal.getNewPrice()/deal.getOldPrice()))*100;
 
         DealDetailsDTO dto = new DealDetailsDTO();
@@ -58,5 +67,9 @@ public class DealBO {
         return dto;
     }
 
+    public DealDO add(DealDO dealDO){
+        DealDO newDeal = dealRepository.save(dealDO);
 
+        return newDeal;
+    }
 }

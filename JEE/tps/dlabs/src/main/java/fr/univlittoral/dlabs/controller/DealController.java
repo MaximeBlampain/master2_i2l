@@ -1,5 +1,9 @@
-package fr.univlittoral.dlabs.deal;
+package fr.univlittoral.dlabs.controller;
 
+import fr.univlittoral.dlabs.bo.DealBO;
+import fr.univlittoral.dlabs.doo.DealDO;
+import fr.univlittoral.dlabs.dto.DealDetailsDTO;
+import fr.univlittoral.dlabs.dto.DealOverviewDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +25,12 @@ public class DealController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-    public DealDetailsDTO getById(@PathVariable("id") String id){
+    public DealDetailsDTO getById(@PathVariable Integer id){
         return dealBO.findById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public DealDO post(@RequestBody DealDO deal) {
+        return dealBO.add(deal);
     }
 }

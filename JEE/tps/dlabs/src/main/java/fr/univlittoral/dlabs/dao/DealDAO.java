@@ -1,5 +1,6 @@
-package fr.univlittoral.dlabs.deal;
+package fr.univlittoral.dlabs.dao;
 
+import fr.univlittoral.dlabs.doo.DealDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,9 +19,9 @@ public class DealDAO{
         return (ArrayList) query.getResultList();
     }
 
-    public DealDO findById(String idDeal) {
+    public DealDO findById(Integer id) {
         Query query = em.createQuery("from DealDO where id = :id");
-        query.setParameter("id", Integer.parseInt(idDeal));
+        query.setParameter("id", id);
         return (DealDO) query.getSingleResult();
     }
 }

@@ -1,17 +1,22 @@
-package fr.univlittoral.dlabs.deal;
+package fr.univlittoral.dlabs.dto;
 
 import java.util.Calendar;
 
-public class DealOverviewDTO {
+public class DealDetailsDTO {
 
     private Integer id;
     private String title;
     private String shopName;
     private String shopLink;
+    private Double oldPrice;
+    private Double newPrice;
+    private Double discount;
     private Integer temperature;
     private String creator;
     private Calendar date;
     private String imageUrl;
+    private String description;
+    private String promoCode;
 
     public Integer getId() {
         return id;
@@ -45,6 +50,30 @@ public class DealOverviewDTO {
         this.shopLink = shopLink;
     }
 
+    public Double getOldPrice() {
+        return oldPrice;
+    }
+
+    public void setOldPrice(Double oldPrice) {
+        this.oldPrice = oldPrice;
+    }
+
+    public Double getNewPrice() {
+        return newPrice;
+    }
+
+    public void setNewPrice(Double newPrice) {
+        this.newPrice = newPrice;
+    }
+
+    public Double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Double discount) {
+        this.discount = discount;
+    }
+
     public Integer getTemperature() {
         return temperature;
     }
@@ -75,5 +104,21 @@ public class DealOverviewDTO {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPromoCode() {
+        return promoCode;
+    }
+
+    public void setPromoCode(String promoCode) {
+        this.promoCode = promoCode;
     }
 }
