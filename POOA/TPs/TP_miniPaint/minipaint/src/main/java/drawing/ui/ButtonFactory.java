@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class ButtonFactory {
 
+    public static String REDO = "Redo";
+    public static String UNDO = "Undo";
     public static String DELETE = "Delete";
     public static String CLEAR = "Clear";
     public static String TRIANGLE = "Triangle";

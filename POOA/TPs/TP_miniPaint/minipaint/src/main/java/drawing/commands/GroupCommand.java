@@ -10,17 +10,9 @@ public class GroupCommand implements ICommand{
 
     private final DrawingPane drawingPane;
     private GroupShape groupShape;
-    private ArrayList<IShape> grouppedShapes;
 
     public GroupCommand(DrawingPane drawingPane) {
         this.drawingPane = drawingPane;
-        this.groupShape = new GroupShape();
-        this.grouppedShapes = new ArrayList<>();
-
-        if (drawingPane.getSelection().iterator().hasNext())
-            for(IShape shape: drawingPane.getSelection()){
-                grouppedShapes.add(shape);
-            }
     }
 
     @Override
@@ -39,9 +31,18 @@ public class GroupCommand implements ICommand{
     @Override
     public void undo() {
         drawingPane.removeShape(groupShape);
-        for(IShape shape : grouppedShapes)
+        for(IShape shape : groupShape)
             drawingPane.addShape(shape);
 
+        drawingPane.getSelection().clearSelection();
+    }
+
+    @Override
+    public void redo() {
+        for(IShape shape: groupShape) {
+            drawingPane.removeShape(shape);
+        }
+        drawingPane.addShape(groupShape);
         drawingPane.getSelection().clearSelection();
     }
 }

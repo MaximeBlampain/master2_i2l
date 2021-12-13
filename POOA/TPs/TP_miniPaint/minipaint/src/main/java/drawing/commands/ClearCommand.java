@@ -10,15 +10,15 @@ public class ClearCommand implements ICommand{
     private ArrayList<IShape> shapes;
 
     public ClearCommand(DrawingPane drawingPane) {
-        this.shapes = new ArrayList<>();
         this.drawingPane = drawingPane;
-
-        shapes.addAll(drawingPane.getShapes());
     }
 
     @Override
     public void execute() {
+        shapes = new ArrayList<>();
+        shapes.addAll(drawingPane.getShapes());
         this.drawingPane.clear();
+        this.drawingPane.getSelection().clearSelection();
     }
 
     @Override
@@ -26,5 +26,10 @@ public class ClearCommand implements ICommand{
         for(IShape shape : shapes) {
             this.drawingPane.addShape(shape);
         }
+    }
+
+    @Override
+    public void redo() {
+        execute();
     }
 }

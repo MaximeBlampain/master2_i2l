@@ -11,15 +11,15 @@ public class DeleteCommand implements ICommand{
 
     public DeleteCommand(DrawingPane drawingPane){
         this.drawingPane = drawingPane;
-        this.shapes = new ArrayList<>();
-
-        for(IShape shape: drawingPane.getSelection())
-            shapes.add(shape);
     }
     @Override
     public void execute() {
-        for(IShape shape: drawingPane.getSelection())
+        shapes = new ArrayList<>();
+
+        for(IShape shape: drawingPane.getSelection()) {
+            shapes.add(shape);
             drawingPane.removeShape(shape);
+        }
         drawingPane.getSelection().clearSelection();
     }
 
@@ -27,6 +27,14 @@ public class DeleteCommand implements ICommand{
     public void undo() {
         for(IShape shape : shapes) {
             this.drawingPane.addShape(shape);
+        }
+        drawingPane.getSelection().clearSelection();
+    }
+
+    @Override
+    public void redo() {
+        for(IShape shape: shapes) {
+            drawingPane.removeShape(shape);
         }
         drawingPane.getSelection().clearSelection();
     }

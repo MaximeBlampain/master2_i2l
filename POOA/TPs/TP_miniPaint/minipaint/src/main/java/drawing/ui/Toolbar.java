@@ -1,9 +1,6 @@
 package drawing.ui;
 
-import drawing.commands.ClearCommand;
-import drawing.commands.DeleteCommand;
-import drawing.commands.GroupCommand;
-import drawing.commands.UngroupCommand;
+import drawing.commands.*;
 import drawing.handlers.ButtonHandler;
 import drawing.handlers.RectangleButtonHandler;
 import drawing.handlers.EllipseButtonHandler;
@@ -19,18 +16,25 @@ public class Toolbar extends HBox {
 
     public Toolbar(DrawingPane drawingPane) throws IOException {
         ButtonFactory factory = new ButtonFactory();
+        CommandHistory commandHistory = drawingPane.getCommandHistory();
 
         Button clearButton = factory.createButton(ButtonFactory.CLEAR, ButtonFactory.TEXT_ONLY);
-        clearButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(new ClearCommand(drawingPane)));
+        clearButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(drawingPane, new ClearCommand(drawingPane)));
 
         Button deleteButton = factory.createButton(ButtonFactory.DELETE, ButtonFactory.TEXT_ONLY);
-        deleteButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(new DeleteCommand(drawingPane)));
+        deleteButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(drawingPane, new DeleteCommand(drawingPane)));
 
         Button groupButton = factory.createButton(ButtonFactory.GROUP, ButtonFactory.TEXT_ONLY);
-        groupButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(new GroupCommand(drawingPane)));
+        groupButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(drawingPane, new GroupCommand(drawingPane)));
 
         Button ungroupButton = factory.createButton(ButtonFactory.UNGROUP, ButtonFactory.TEXT_ONLY);
-        ungroupButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(new UngroupCommand(drawingPane)));
+        ungroupButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(drawingPane, new UngroupCommand(drawingPane)));
+
+        Button undoButton = factory.createButton(ButtonFactory.UNDO, ButtonFactory.TEXT_ONLY);
+        undoButton.setOnAction(event -> drawingPane.getCommandHistory().undo());
+
+        Button redoButton = factory.createButton(ButtonFactory.REDO, ButtonFactory.TEXT_ONLY);
+        redoButton.setOnAction(event -> drawingPane.getCommandHistory().redo());
 
 
         Button rectangleButton = factory.createButton(ButtonFactory.RECTANGLE, ButtonFactory.TEXT_ONLY);
@@ -49,7 +53,9 @@ public class Toolbar extends HBox {
                 triangleButton,
                 deleteButton,
                 groupButton,
-                ungroupButton
+                ungroupButton,
+                undoButton,
+                redoButton
         );
         this.setPadding(new Insets(5));
         this.setSpacing(5.0);

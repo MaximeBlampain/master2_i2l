@@ -1,4 +1,5 @@
 drawing/ui/ButtonFactory.class
+drawing/commands/ShapeCommand.class
 drawing/handlers/SelectionHandler.class
 drawing/ui/Toolbar.class
 drawing/commands/UngroupCommand.class
@@ -6,17 +7,18 @@ drawing/handlers/TriangleButtonHandler.class
 drawing/shapes/GroupShape.class
 drawing/handlers/MouseMoveHandler.class
 drawing/handlers/RectangleButtonHandler.class
+drawing/commands/DeleteCommand.class
 drawing/commands/ClearCommand.class
 drawing/handlers/ButtonHandler.class
 drawing/ui/DrawingPane.class
 drawing/handlers/ShapeButtonHandler.class
+drawing/commands/CommandHistory.class
 drawing/ui/Observer.class
 drawing/PaintApplication.class
+drawing/commands/MoveCommand.class
 drawing/handlers/EllipseButtonHandler.class
 drawing/commands/ICommand.class
-drawing/handlers/UngroupButtonHandler.class
 drawing/commands/GroupCommand.class
 drawing/shapes/ShapeAdapter.class
-drawing/handlers/DeleteButtonHandler.class
 drawing/ui/StatutBar.class
 drawing/shapes/IShape.class
