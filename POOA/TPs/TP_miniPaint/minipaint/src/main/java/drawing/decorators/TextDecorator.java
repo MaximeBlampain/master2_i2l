@@ -1,20 +1,19 @@
-package drawing.shapes;
+package drawing.decorators;
 
 import drawing.shapes.IShape;
-import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 
 import javafx.scene.shape.Shape;
 
-import java.util.List;
-
-public class ShapeAdapter extends Shape implements IShape {
+public class TextDecorator implements IShape {
 
     Shape shape;
+    String text;
     boolean isSelected;
 
-    public ShapeAdapter(Shape shape) {
-        this.shape = shape;
+    public TextDecorator(Shape s, String txt){
+        shape = s;
+        text = txt;
     }
 
     @Override
@@ -51,7 +50,6 @@ public class ShapeAdapter extends Shape implements IShape {
     @Override
     public void addShapeToPane(Pane pane) {
         pane.getChildren().add(shape);
-        //this.getChildren().add(shape);
     }
 
     @Override
@@ -61,16 +59,6 @@ public class ShapeAdapter extends Shape implements IShape {
 
     @Override
     public IShape clone() {
-
-        Shape clonnedShape = Shape.union(shape, shape);
-
-         List<String> css = shape.getStyleClass();
-        for(String cssClass : css){
-            clonnedShape.getStyleClass().add(cssClass);
-        }
-        IShape clone = new ShapeAdapter(clonnedShape);
-        clone.setSelected(false);
-        return clone;
+        return null;
     }
-
 }

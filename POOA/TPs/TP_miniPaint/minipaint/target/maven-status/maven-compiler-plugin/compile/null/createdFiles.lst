@@ -8,6 +8,7 @@ drawing/shapes/GroupShape.class
 drawing/handlers/MouseMoveHandler.class
 drawing/handlers/RectangleButtonHandler.class
 drawing/commands/DeleteCommand.class
+drawing/commands/CloneCommand.class
 drawing/commands/ClearCommand.class
 drawing/handlers/ButtonHandler.class
 drawing/ui/DrawingPane.class

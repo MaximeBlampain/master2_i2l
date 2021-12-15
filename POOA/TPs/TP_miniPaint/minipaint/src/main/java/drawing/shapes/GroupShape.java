@@ -2,6 +2,7 @@ package drawing.shapes;
 
 import javafx.scene.layout.Pane;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -13,10 +14,10 @@ public class GroupShape implements IShape, Iterable<IShape> {
         this.shapes = new ArrayList<>();
     }
 
-    public GroupShape(Iterator<IShape> shapes) {
+    public GroupShape(ArrayList<IShape> shapes) {
         this();
-        while (shapes.hasNext()) {
-            addShape(shapes.next());
+        for(IShape shape: shapes){
+            addShape(shape);
         }
     }
 
@@ -36,6 +37,16 @@ public class GroupShape implements IShape, Iterable<IShape> {
         for (IShape shape : shapes) {
             shape.removeShapeFromPane(pane);
         }
+    }
+
+    @Override
+    public IShape clone() {
+        ArrayList<IShape> clonnedGroup = new ArrayList<>();
+        for(IShape shape : shapes){
+            clonnedGroup.add(shape.clone());
+        }
+
+        return new GroupShape(clonnedGroup);
     }
 
     @Override

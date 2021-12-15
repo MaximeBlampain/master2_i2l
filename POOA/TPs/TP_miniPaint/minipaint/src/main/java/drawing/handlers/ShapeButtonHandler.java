@@ -55,5 +55,4 @@ public abstract class ShapeButtonHandler implements EventHandler<Event> {
     }
 
     protected abstract IShape createShape();
-
 }

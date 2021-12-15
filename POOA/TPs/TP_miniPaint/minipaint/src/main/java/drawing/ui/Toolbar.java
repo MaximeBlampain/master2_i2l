@@ -30,6 +30,9 @@ public class Toolbar extends HBox {
         Button ungroupButton = factory.createButton(ButtonFactory.UNGROUP, ButtonFactory.TEXT_ONLY);
         ungroupButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(drawingPane, new UngroupCommand(drawingPane)));
 
+        Button cloneButton = factory.createButton(ButtonFactory.CLONE, ButtonFactory.TEXT_ONLY);
+        cloneButton.addEventFilter(ActionEvent.ACTION, new ButtonHandler(drawingPane, new CloneCommand(drawingPane)));
+
         Button undoButton = factory.createButton(ButtonFactory.UNDO, ButtonFactory.TEXT_ONLY);
         undoButton.setOnAction(event -> drawingPane.getCommandHistory().undo());
 
@@ -55,7 +58,8 @@ public class Toolbar extends HBox {
                 groupButton,
                 ungroupButton,
                 undoButton,
-                redoButton
+                redoButton,
+                cloneButton
         );
         this.setPadding(new Insets(5));
         this.setSpacing(5.0);
