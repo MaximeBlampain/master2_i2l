@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final static String Ref = "fr.ulco.contentproviderblampain.Ref";
     private Switch switchSort;
     private ArrayList<String> listItemDico = new ArrayList<String>();;
     private ArrayAdapter<String> adapterListItemDico;
