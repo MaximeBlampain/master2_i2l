@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="fr.ulco.mblampain.MainActivity">
+    <item android:id="@+id/randomPalindrome" android:orderInCategory="100" android:title="@string/randomPalindrome" app:showAsAction="never"/>
+    <item android:id="@+id/maybePalindrome" android:orderInCategory="100" android:title="@string/maybePalindrome" app:showAsAction="never"/>
+    <item android:id="@+id/perecPalindrome" android:orderInCategory="100" android:title="@string/perecPalindrome" app:showAsAction="never"/>
+    <item android:id="@+id/seePerecPalindrome" android:orderInCategory="100" android:title="@string/seePerecPalindrome" app:showAsAction="never"/>
+    <item android:id="@+id/about" android:orderInCategory="100" android:title="@string/about" app:showAsAction="never"/>
+</menu>

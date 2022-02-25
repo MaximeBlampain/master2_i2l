@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Project2021</string>
+    <string name="Clean">Nettoyer</string>
+    <string name="Reverse">Retourner</string>
+    <string name="Compare">Comparer</string>
+    <string name="onlyLandscape">Application seulement disponible en mode paysage</string>
+    <string name="randomPalindrome">Palindrome aléatoire</string>
+    <string name="maybePalindrome">Est-ce un palindrome ?</string>
+    <string name="perecPalindrome">Le palindrome de Perec</string>
+    <string name="seePerecPalindrome">Voir le palindrome de Perec</string>
+    <string name="about">A propos de ...</string>
+    <string name="reset">Réinitialiser les inputs</string>
+    <string name="dialog_not_available">Pas disponnible pour l\'instant</string>
+    <string name="dialog_ok">Ok</string>
+    <string name="About">A propos de ....</string>
+    <string name="lisic_s_logo">Lisic\'s logo</string>
+    <string name="ulco_s_logo">ULCO\'s logo</string>
+    <string name="lmpa_s_logo">LMPA\'s logo</string>
+    <string name="Palindrome">Palindrome</string>
+    <string name="Version">V1.0.0 - 28/01/2022 - Maxime Blampain</string>
+    <string name="Admin_password">Mot de passe administrateur</string>
+    <string name="connect">Connexion</string>
+    <string name="cancel">Annuler</string>
+    <string name="admin_mode">Mode Admin</string>
+    <string name="password">Mot de Passe</string>
+    <string name="add_to_palindrome">Ajouter aux palindromes</string>
+    <string name="add_to_maybe">Ajouter à l\'autre liste</string>
+    <string name="CompareV2">Comparer V2</string>
+</resources>
