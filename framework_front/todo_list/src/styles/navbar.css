@@ -1,0 +1,15 @@
+.navlink {
+    text-decoration: none;
+    padding: 8px;
+    color: inherit;
+    margin: 0;
+    min-width: 0;
+}
+
+.navlink:hover{
+    color: #FFFFFF;
+}
+
+.active {
+    color: #FFFFFF;
+}
