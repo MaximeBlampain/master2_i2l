@@ -1,22 +1,40 @@
+import { useState } from 'react'
+
+// Components
+import EditionCard from "./components/editionCard";
+import VisualisationCard from "./components/visualisationCard";
 
 // Style
 import {
   Card,
-  Heading,
   Flex,
-  Button,
 } from "rebass"
-
-import {
-  Input
-} from "@rebass/forms"
 
 
 export default function TodoCard({
   title,
   description,
   image,
+  deadline,
+  status,
  }) {
+  // State
+  const [cardStatus, setCardStatus] = useState("edit")
+  const [cardProperties, setCardProperties] = useState({
+    image: image,
+    title: title,
+    description: description,
+    deadline: deadline,
+    status: status,
+  })
+
+  const changeCardStatus = status => {
+    setCardStatus(status)
+  }
+
+  const onChangeCardProperty = (event, property) => {
+    setCardProperties({...cardProperties, [property]: event.target.value})
+  }
 
   return (
     <Card
@@ -32,15 +50,14 @@ export default function TodoCard({
         alignItems="center"
         flexDirection="column"
       >
-        <Flex alignItems="center">
-          <Input
-            id="title"
-            name="title"
-            type="text"
-            placeholder="Ma super todo"
-          />
+        <Flex justifyContent="spaceAround">
+          <p onClick={() => changeCardStatus("view")}> View </p>
+          <p onClick={() => changeCardStatus("edit")}> Edit </p>
         </Flex>
-        <Heading as="h3">{title}</Heading>
+        {cardStatus === "view"
+          ? <VisualisationCard card={cardProperties}/>
+          : <EditionCard card={cardProperties}/>
+        }
       </Flex>
     </Card>
   )

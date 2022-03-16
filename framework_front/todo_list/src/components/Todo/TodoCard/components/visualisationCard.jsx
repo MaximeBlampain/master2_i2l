@@ -1,5 +1,14 @@
+import {Flex, Heading} from "rebass";
 
 export default function VisualisationCard({
+  title
 }) {
-  return <h1>VisualisationCard</h1>
+  return(
+  <Flex
+    alignItems="center"
+    flexDirection="column"
+  >
+
+    <Heading as="h3">{title}</Heading>
+  </Flex>)
 }
