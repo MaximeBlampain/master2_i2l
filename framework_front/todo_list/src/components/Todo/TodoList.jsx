@@ -1,4 +1,4 @@
-import {useState, useEffect, Fragment} from "react";
+import {useState, useEffect, Fragment, Children} from "react";
 import {generateTask} from "./fake.tasks";
 
 // Components
@@ -26,13 +26,13 @@ export default function TodoList() {
       py={10}
     >
       <h1>Liste des tâches</h1>
-      {todos.map(todo => (
+      {Children.toArray(todos.map(todo => (
         <TodoCard
           title={todo.title}
           description={todo.description}
           image={todo.img}
         />
-      ))}
+      )))}
     </Flex>
   )
 }

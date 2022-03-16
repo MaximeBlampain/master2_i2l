@@ -8,7 +8,7 @@ export function generateTask(number = 0){
       title: faker.commerce.productName(),
       description: faker.commerce.productDescription(),
       deadline: faker.date.future(),
-      img: fakeImg,
+        img: fakeImg,
     })
   }
   return taskListToReturn

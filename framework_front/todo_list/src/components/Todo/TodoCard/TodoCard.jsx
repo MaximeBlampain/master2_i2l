@@ -39,7 +39,6 @@ export default function TodoCard({
   return (
     <Card
       width={500}
-      height={100}
       my={3}
       px={2}
       py={2}
@@ -56,7 +55,10 @@ export default function TodoCard({
         </Flex>
         {cardStatus === "view"
           ? <VisualisationCard card={cardProperties}/>
-          : <EditionCard card={cardProperties}/>
+          : <EditionCard
+              card={cardProperties}
+              onChangeProperty={onChangeCardProperty}
+          />
         }
       </Flex>
     </Card>
