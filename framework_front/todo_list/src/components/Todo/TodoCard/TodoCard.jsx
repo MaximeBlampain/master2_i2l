@@ -5,62 +5,61 @@ import EditionCard from "./components/editionCard";
 import VisualisationCard from "./components/visualisationCard";
 
 // Style
-import {
-  Card,
-  Flex,
-} from "rebass"
+import { Box, Button, Flex, CloseButton} from "@chakra-ui/react"
 
 
 export default function TodoCard({
-  title,
-  description,
-  image,
-  deadline,
-  status,
+  todo,
+  updateTask,
+  deleteTask,
  }) {
   // State
-  const [cardStatus, setCardStatus] = useState("edit")
-  const [cardProperties, setCardProperties] = useState({
-    image: image,
-    title: title,
-    description: description,
-    deadline: deadline,
-    status: status,
-  })
+  const [cardStatus, setCardStatus] = useState("view")
 
   const changeCardStatus = status => {
     setCardStatus(status)
   }
 
-  const onChangeCardProperty = (event, property) => {
-    setCardProperties({...cardProperties, [property]: event.target.value})
-  }
-
   return (
-    <Card
+    <Box
       width={500}
       my={3}
-      px={2}
-      py={2}
+      p={2}
       sx={{boxShadow: '0 0 16px rgba(0, 0, 0, .25)'}}
-      as={"form"}
     >
+      <CloseButton
+        onClick={() => deleteTask(todo.id)}
+      />
       <Flex
-        alignItems="center"
-        flexDirection="column"
+        align="center"
+        direction="column"
       >
-        <Flex justifyContent="spaceAround">
-          <p onClick={() => changeCardStatus("view")}> View </p>
-          <p onClick={() => changeCardStatus("edit")}> Edit </p>
+        <Flex justify="center" p={2}>
+          <Button
+            colorScheme='teal'
+            size='xs'
+            onClick={() => changeCardStatus("view")}
+            mr={5}
+          >
+            View
+          </Button>
+          <Button
+            colorScheme='teal'
+            size='xs'
+            onClick={() => changeCardStatus("edit")}
+          >
+            Edit
+          </Button>
         </Flex>
         {cardStatus === "view"
-          ? <VisualisationCard card={cardProperties}/>
+          ? <VisualisationCard card={todo}/>
           : <EditionCard
-              card={cardProperties}
-              onChangeProperty={onChangeCardProperty}
+              card={todo}
+              updateTask={updateTask}
+              changeCardStatus={changeCardStatus}
           />
         }
       </Flex>
-    </Card>
+    </Box>
   )
 }
