@@ -14,4 +14,10 @@
 - Utiliser une librairie CSS externe avec des composants react
 
 Liste :
-- Liste de tâches (img ?, titre, description, deadline ?, statut)
+- Liste de tâches (titre, description, deadline, statut)
+
+##How to launch project ? 
+
+Please run `npm install` before to get all nodes_modules.
+
+Then, run `npm start` to launch the project.
