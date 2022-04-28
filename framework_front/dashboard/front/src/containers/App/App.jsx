@@ -1,16 +1,8 @@
 
-import { Flex } from "@chakra-ui/react"
+import Router from "./Router"
 
-function App() {
-  return (
-    <Flex>
-      <!-- <SideBar /> -->
-      <Flex direction="column">
-        <!-- <Header /> -->
-        <!-- <Router /> -->
-      </Flex>
-    </Flex>
-  )
+export default function App() {
+  return <Router />
 }
 
-export default App
+
