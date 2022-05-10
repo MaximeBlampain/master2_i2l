@@ -1,0 +1,2 @@
+INSERT INTO links (link, title, description) VALUES ("https://aliaume", "Aliaume Delattaignant", "Super description");
+INSERT INTO links (link, title, description) VALUES ("https://maxime", "Maxime Blampain", "Super description");

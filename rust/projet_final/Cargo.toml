@@ -1,0 +1,22 @@
+[package]
+name = "projet-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.5.0-rc.1"
+serde = { version = "1.0.130", features = ["derive"] }
+serde_json = "1.0.68"
+reqwest = { version = "0.11.6", features = ["blocking", "json"] }
+futures = "0.3" # for our async / await blocks
+tokio = { version = "1", features = ["full"] }
+
+[dependencies.rocket_dyn_templates]
+version = "0.1.0-rc.1"
+features = ["tera"]
+
+[dependencies.rusqlite]
+version = "0.14.0"
+features = ["bundled"]
