@@ -3,20 +3,14 @@ const schemaValidator = require('../utils/schemaValidator')
 
 function addCryptoAsset(req, res, next){
   const schema = Joi.object({
-    userId: Joi.string().uuid().required(),
-    token: Joi.string().required(),
-    numberToken: Joi.number().required(),
-  }).required()
+    USER_ID: Joi.string().uuid(),
+    SYMBOL: Joi.string(),
+    NUMBER_TOKEN: Joi.number(),
+    PURCHASE_PRICE: Joi.number(),
+  })
   schemaValidator(req, next, schema)
-}
-
-function deleteCryptoAsset(req, res, next){
-  const schema = Joi.object({
-    assetId: Joi.string().uuid().required()
-  }).required()
 }
 
 module.exports = {
   addCryptoAsset,
-  deleteCryptoAsset,
 }

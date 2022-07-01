@@ -1,23 +1,8 @@
-import { Sequelize, DataTypes, Model } from "sequelize/types"
+const { DataTypes, Model } = require("sequelize")
 
-const sequelize = new Sequelize('sqlite::memory:');
+const {sequelize} = require("../utils/Sequelize");
 
 class CryptoAssetModel extends Model {
-  getAssetId(){ return this.ASSET_ID }
-
-  getUserId(){ return this.USER_ID}
-  setUserId(userId){ this.USER_ID = userId}
-
-  getToken(){ return this.TOKEN }
-  setToken(token){ this.TOKEN = token }
-
-  getNumberToken(){ return this.NUMBER_TOKEN }
-  setNumberToken(numberToken){ this.NUMBER_TOKEN = numberToken}
-
-  getPurchaseDate(){ return this.PURCHASE_DATE }
-
-  getPurchasePrice(){ return this.PURCHASE_PRICE }
-  setPurchasePrice(purchasePrice){ this.PURCHASE_PRICE = purchasePrice }
 }
 
 CryptoAssetModel.init({
@@ -30,7 +15,7 @@ CryptoAssetModel.init({
     type: DataTypes.UUID,
     allowNull: false
   },
-  TOKEN: {
+  SYMBOL: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -49,6 +34,8 @@ CryptoAssetModel.init({
 }, {
   sequelize,
   timestamps: false,
-  tableName: 'User',
-  modelName: 'User',
+  tableName: 'CryptoAsset',
+  modelName: 'CryptoAsset',
 })
+
+module.exports = CryptoAssetModel

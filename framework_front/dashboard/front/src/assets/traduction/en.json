@@ -1,0 +1,47 @@
+{
+  "CRYPTO_APP": "Crypto App",
+  "EMAIL": "Email",
+  "PASSWORD": "Password",
+  "FIRSTNAME": "Firstname",
+  "LASTNAME": "Lastname",
+  "SELECTED_LANGUAGE": "Selected Language",
+  "EN": "English",
+  "FR": "French",
+
+
+  "NO_ACCOUNT": "No account yet ?",
+  "REGISTER": "Register",
+  "LOGIN": "Login",
+
+  "SIGN_UP_NOW": "Sign up Now !",
+  "ALREADY_HAVE_AN_ACCOUNT": "Already have an account ?",
+
+  "DASHBOARD": "Dashboard",
+  "WALLET": "Wallet",
+  "DISCONNECT": "Disconnect",
+
+  "MY_PROFILE": "My profile",
+  "EDIT": "Edit",
+  
+  "DELETE_ACCOUNT": "Delete my account",
+  "DO_YOU_WANT_TO_DELETE_YOUR_ACCOUNT": "Are you sure you want to delete your account? This action is irreversible.",
+
+  "CRYPTO_LIST_ACCEPTED": "List of accepted cryptocurrencies",
+  "ICON": "Icon",
+  "SYMBOL": "Symbol",
+  "NAME": "Name",
+  "ACTUAL_PRICE": "Actual price",
+  "VARIATION_24H" : "Variation ~24h",
+  "VARIATION_7D" : "Variation ~7d",
+  "MY_ASSETS": "My assets",
+
+  "UNIT_COST_PRICE": "Unit cost price",
+  "NUMBER_OF_TOKEN": "Number of token",
+  "ACTIONS": "Actions",
+  "ADD_ASSET": "Add an asset",
+  "CRYPTO": "Cryptocurrency",
+  "QUANTITY": "Quantity",
+  "ADD": "Add",
+  "DELETE": "Delete",
+  "DO_YOU_WANT_TO_DELETE_THIS_ASSET": "Are you sure you want to delete this asset? This action is irreversible."
+}

@@ -1,12 +1,11 @@
 import {
-  GET_WALLET,
-  ADD_ASSET,
-  EDIT_ASSET,
-  DELETE_ASSET,
+  GET_WALLET_SUCCESS,
+  ADD_ASSET_SUCCESS,
+  DELETE_ASSET_SUCCESS,
 } from "./WalletTypes";
 
 const INITIAL_STATE = {
-  cryptoAssets: []
+  assets: []
 }
 
 export default function WalletReducer(
@@ -14,8 +13,25 @@ export default function WalletReducer(
   { type, payload },
 ){
   switch(type){
-    case GET_WALLET :
-      return { ...state, cryptoAssets: payload}
+    case GET_WALLET_SUCCESS :
+      return { ...state, assets: payload}
+    case ADD_ASSET_SUCCESS:
+      return {
+        ...state,
+        assets: [
+          ...state.assets,
+          payload,
+        ]
+      }
+    case DELETE_ASSET_SUCCESS:
+      const deletedIndex = state.assets.findIndex(asset => asset.ASSET_ID === payload.id)
+      const newAssets = [...state.assets]
+      newAssets.splice(deletedIndex, 1)
+      return {
+        ...state,
+        assets: newAssets
+      }
+    default:
+      return state
   }
-  return state
 }

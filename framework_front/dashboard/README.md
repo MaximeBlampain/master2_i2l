@@ -7,14 +7,31 @@
 - Front-End:
   - React
   - Redux
+  - Redux-Persist
+  - Redux-Saga
   - React-Router-DOM
   - Chakra UI
   - ViteJS
+  - Victory Pie
 
 
 - Back-End:
   - ExpressJS
   - Nodemon
+  - CoinGecko API
+  - Cryptr
+  - Joi
+  - JWT (Json Web Token)
+  - Sequelize
+  - SQLite3
+
+---
+## Pour lancer le projet
+
+Au préalable, merci d'executer la commande `npm install` dans le dossier front et back.
+
+- Front : `npm run dev`
+- Back : `npm run start`
 
 ---
 ## Créer une app de gestion de portefeuille (boursier, crypto ou autre)

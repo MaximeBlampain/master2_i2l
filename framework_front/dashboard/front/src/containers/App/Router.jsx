@@ -16,30 +16,30 @@ function PublicRoute({ children, isLoggedIn}){
   return !isLoggedIn ? children : <Navigate to="/" />
 }
 
-export default function Router() {
+export default function Router({ isLoggedIn }) {
   return (
     <Routes>
       // Private Routes
       <Route
         path="/"
-        element={<PrivateRoute isLoggedIn={true} > <Dashboard /> </PrivateRoute>}
+        element={<PrivateRoute isLoggedIn={isLoggedIn} > <Dashboard /> </PrivateRoute>}
       />
       <Route
         path="/profile"
-        element={<PrivateRoute isLoggedIn={true} > <Profile /> </PrivateRoute>}
+        element={<PrivateRoute isLoggedIn={isLoggedIn} > <Profile /> </PrivateRoute>}
       />
       <Route
         path="/wallet"
-        element={<PrivateRoute isLoggedIn={true} > <Wallet /> </PrivateRoute>}
+        element={<PrivateRoute isLoggedIn={isLoggedIn} > <Wallet /> </PrivateRoute>}
       />
       // Public Routes
       <Route
         path="/login"
-        element={<PublicRoute isLoggedIn={false} > <Login /> </PublicRoute>}
+        element={<PublicRoute isLoggedIn={isLoggedIn} > <Login /> </PublicRoute>}
       />
       <Route
         path="/signup"
-        element={<PublicRoute isLoggedIn={false} > <Signup /> </PublicRoute>}
+        element={<PublicRoute isLoggedIn={isLoggedIn} > <Signup /> </PublicRoute>}
       />
     </Routes>
   )

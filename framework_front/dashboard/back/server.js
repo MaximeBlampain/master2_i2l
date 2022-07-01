@@ -1,11 +1,11 @@
 const express = require("express")
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 /* Routers */
-const { userRouter, cryptoAssetRouter} = require("./routes")
+const { userRouter, cryptoAssetRouter, cryptoRouter } = require("./routes")
 
 /* Utils */
-const { createToken, verifyToken } = require("./utils/jwt")
 const {connectDatabase} = require("./utils/Sequelize")
 
 /* Config */
@@ -15,14 +15,12 @@ const { PORT } = require("./config.json")
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(cors())
 
 /* Routers */
 app.use("/user", userRouter)
-app.use("/crypto", cryptoAssetRouter)
-
-app.get("/", (req, res) => res.send("Hello World"))
-app.get("/token", (req, res) => res.send(createToken("Hello World")))
-app.get("/checktoken", (req, res) => res.send(verifyToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJIZWxsbyBXb3JsZCIsImlhdCI6MTY1MTI1NTUzNywiZXhwIjoxNjUxMzQxOTM3fQ.hwhHQNOt7x-HEIRgGbZnCRD7bxSKe6BjFcsn3xJ4y0w", "Hello World")))
+app.use("/crypto", cryptoRouter)
+app.use("/asset", cryptoAssetRouter)
 
 app.listen(PORT, () => {
   connectDatabase()

@@ -1,0 +1,2 @@
+/** Definitions for serial port **/
+

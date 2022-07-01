@@ -41,7 +41,6 @@ module.exports = UserModel
 /**
  * Model User
  *
- * Avatar
  * Lastname
  * Firstname
  * Email

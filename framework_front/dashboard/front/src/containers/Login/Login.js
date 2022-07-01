@@ -5,11 +5,13 @@ import { connect } from "react-redux"
 import Login from "../../components/Login"
 
 // Actions
-
+import { login } from "../../stores/Login/LoginActions"
 // Selectors
 
 // Redux
-const mapDispatchToProps = dispatch => ({})
+const mapDispatchToProps = dispatch => ({
+    login: form => dispatch(login(form))
+})
 
 const mapStateToProps = createStructuredSelector({})
 
